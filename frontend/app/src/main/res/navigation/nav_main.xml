@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/homeLoginFragment">
+
+    <fragment
+        android:id="@+id/homeLoginFragment"
+        android:name="com.example.yeschef.HomeLoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_home_login">
+        <action
+            android:id="@+id/action_homeLoginFragment_to_signupFragment"
+            app:destination="@id/signupFragment" />
+        <action
+            android:id="@+id/action_homeLoginFragment_to_recipeListFragment"
+            app:destination="@id/recipeListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signupFragment"
+        android:name="com.example.yeschef.SignupFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_signupFragment_to_homeLoginFragment"
+            app:destination="@id/homeLoginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeListFragment"
+        android:name="com.example.yeschef.RecipeListFragment"
+        android:label="Recipes"
+        tools:layout="@layout/fragment_recipe_list">
+        <action
+            android:id="@+id/action_recipeListFragment_to_selectedRecipeFragment"
+            app:destination="@id/selectedRecipeFragment" />
+        <action
+            android:id="@+id/action_recipeListFragment_to_postRecipeFragment"
+            app:destination="@id/postRecipeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectedRecipeFragment"
+        android:name="com.example.yeschef.SelectedRecipeFragment"
+        tools:layout="@layout/fragment_selected_recipe">
+        <action
+            android:id="@+id/action_selectedRecipeFragment_to_commentsFragment"
+            app:destination="@id/commentsFragment" />
+        <action
+            android:id="@+id/action_selectedRecipeFragment_to_postCommentFragment"
+            app:destination="@id/postCommentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/commentsFragment"
+        android:name="com.example.yeschef.CommentsFragment"
+        android:label="Comments"
+        tools:layout="@layout/fragment_comments" />
+    <fragment
+        android:id="@+id/postCommentFragment"
+        android:name="com.example.yeschef.PostCommentFragment"
+        android:label="Post Comment"
+        tools:layout="@layout/fragment_post_comment" >
+        <action
+            android:id="@+id/action_postCommentFragment_to_commentsFragment"
+            app:destination="@id/commentsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postRecipeFragment"
+        android:name="com.example.yeschef.PostRecipeFragment"
+        android:label="Post a Recipe"
+        tools:layout="@layout/fragment_post_recipe" />
+</navigation>
